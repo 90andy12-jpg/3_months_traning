@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>promises</h2>
+<p id="demo"></p>
+<script>
+    let promise = new promise (function(resolve,reject) {
+        let x=1;
+        if (x===0) {
+            resolve("promise fufilled");
+        }
+        else{
+            reject("promise rejected");
+        }
+        console.log(promise);
+
+        promise.them(
+            function(value){
+                document.getElementById("demo").innerHTML = value;
+            },
+            function(error){
+                document.getElementById("demo").innerHTML =error;
+            }
+        )
+      }
+    )
+ </script>
+</body>
+</html>
