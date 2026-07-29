@@ -4,10 +4,10 @@
 <h2>promises</h2>
 <p id="demo"></p>
 <script>
-    let promise = new promise (function(resolve,reject) {
+    let promise = new promise (function(resolve,reject,panding) {
         let x=1;
         if (x===0) {
-            resolve("promise fufilled");
+            setTimeout(resolve("promise fufilled"),3000);
         }
         else{
             reject("promise rejected");
