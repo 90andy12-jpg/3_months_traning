@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Example</title>
+</head>
 <body>
-<h2>promises</h2>
-<p id="demo"></p>
-<script>
-    let promise = new promise (function(resolve,reject,panding) {
-        let x=1;
-        if (x===0) {
-            setTimeout(resolve("promise fufilled"),3000);
-        }
-        else{
-            reject("promise rejected");
-        }
-        console.log(promise);
 
-        promise.them(
-            function(value){
-                document.getElementById("demo").innerHTML = value;
-            },
-            function(error){
-                document.getElementById("demo").innerHTML =error;
+    <h2>Promises</h2>
+    <p id="demo"></p>
+
+    <script>
+        let promise = new Promise(function(resolve, reject) {
+            let x = 0; 
+
+            if (x === 0) {
+                resolve("Promise Fulfilled");
+            } else {
+                reject("Promise Rejected");
             }
-        )
-      }
-    )
- </script>
+        });
+        console.log(promise);
+        promise
+            .then(function(value) {
+                document.getElementById("demo").innerHTML = value;
+            })
+            .catch(function(error) {
+                document.getElementById("demo").innerHTML = error;
+            });
+    </script>
 </body>
 </html>
