@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>callbacks or timer</h2>
+<p id="demo"></p>
+<script>
+// 1.
+        // function saygoodbye(){
+        //     document.getElementById("demo").innerHTML += "goodbye<br>";
+        //     console.log("goodbye");
+        // }
+
+        // function sayhello(){
+        //     document.getElementById("demo").innerHTML += "hello<br>";
+        //     console.log("hello");
+        // }
+
+        // sayhello();
+        // saygoodbye();
+// 2.
+        // function sayhello(callback){
+        //     console.log("hello");
+        //     callback();
+        // }
+        // function saygoodbye(){
+        //     console.log("goodbye");
+        // }
+
+        // sayhello(saygoodbye);
+//  3.
+        // function add(callback){
+        //     let a=5;
+        //     let b=10;
+        //     let sum = a+b;
+        //     console.log("sum:" , sum);
+        //     callback();
+        // }
+
+        // function multiply(){
+        //     let a=5;
+        //     let b=10;
+        //     let product = a * b;
+        //     console.log("product:" , product);
+        // }
+
+        // add(multiply);
+
+// 4. asynchronous
+        // function mydisplay (something){
+        //     document.getElementById("demo").innerHTML = something;
+        // }
+
+        // function mycalculator (n1,n2,callback){
+        //  let sum = n1 + n2;
+        //  callback(sum);
+        // }
+
+        // mycalculator(5,5,mydisplay);
+
+// 5. setTimeout
+        // function sayhello (){
+        // document.getElementById("demo").innerHTML = "hello";
+        // }
+         
+        // function myfunction (){
+        // document.getElementById("demo").innerHTML = "my name is aditya";
+        // }
+
+        // sayhello();
+        // setTimeout(myfunction ,3000);
+
+// 6. passing_whole_fn
+        // setTimeout(function() { 
+        // document.getElementById("demo").innerHTML = "Your pizza is ready 🍕"; 
+        // }, 3000);
+
+// 7. setInterval
+        // function showTime (){
+        //    let d = new Date();
+        //    document.getElementById("demo").innerHTML =
+        //    d.getHours()+ ":" +
+        //    d.getMinutes() + ":" +
+        //    d.getSeconds();
+        // }
+        // setInterval(showTime, 1000);
+
+
+  </script>
+</body>
+</html>

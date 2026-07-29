@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Store</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+
+nav{
+
+    background:black;
+    padding:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.logo{
+
+    color:white;
+    font-size:25px;
+
+}
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    cursor:pointer;
+
+}
+
+
+/* HOME */
+
+.home{
+
+    height:90vh;
+
+    background:url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.home-content{
+
+    background:#4e99a2;
+
+    padding:30px;
+
+    width:600px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+}
+
+
+
+button{
+
+    padding:10px 20px;
+
+    margin:10px;
+
+    background:black;
+
+    color:white;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+
+/* BOOK SECTION */
+
+
+.books-section{
+
+    display:none;
+
+    padding:40px;
+
+    min-height:90vh;
+
+    gap:40px;
+
+    align-items:flex-start;
+
+}
+
+
+
+/* LEFT BOX */
+
+
+.book-box{
+
+    width:350px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 0 15px gray;
+
+    text-align:center;
+
+}
+
+
+.book-box input,
+.book-box select{
+
+    width:90%;
+
+    padding:10px;
+
+    margin:10px;
+
+}
+
+
+
+/* BOOK CARDS */
+
+
+#bookList{
+
+    flex:1;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+
+
+.card{
+
+    width:220px;
+
+    background:black;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+
+.card img{
+
+    width:150px;
+
+    height:200px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+
+}
+
+
+
+/* OTHER SECTION */
+
+
+.cart-section,
+.contact-section{
+
+    display:none;
+
+    padding:50px;
+
+    text-align:center;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+Book Store
+</div>
+
+
+<div>
+
+<a onclick="home()">Home</a>
+
+<a onclick="showBooks()">Books</a>
+
+<a onclick="cart()">Cart</a>
+
+<a onclick="contact()">Contact</a>
+
+</div>
+
+</nav>
+
+
+
+
+<section class="home" id="home">
+
+
+<div class="home-content">
+
+<h1>
+Welcome To Online Book Store
+</h1>
+
+<p>
+Find your favourite books here
+</p>
+
+
+<button onclick="showBooks()">
+Explore Books
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="books-section" id="books">
+
+
+<div class="book-box">
+
+
+<h2>Add Book</h2>
+
+
+<label>Book Name</label>
+
+<input type="text" id="bookName">
+
+
+
+<label>Book Image</label>
+
+<input type="file" id="bookImage" accept="image/*">
+
+
+
+<label>Operation</label>
+
+
+<select id="operation">
+
+<option value="add">Add</option>
+
+<option value="remove">Remove</option>
+
+<option value="copy">Copy</option>
+
+<option value="slice">Slice</option>
+
+<option value="concat">New Arrival</option>
+
+<option value="flat">Flat</option>
+
+<option value="update">Update</option>
+
+</select>
+
+
+
+<button onclick="submitBook()">
+Submit
+</button>
+
+
+</div>
+
+
+
+<div id="bookList"></div>
+
+
+
+</section>
+
+
+
+
+
+
+<section class="cart-section" id="cart">
+
+<h1>
+Cart Empty
+</h1>
+
+</section>
+
+
+
+
+
+<section class="contact-section" id="contact">
+
+
+<h1>
+Contact Us
+</h1>
+
+
+<p>
+Email : bookstore@gmail.com
+</p>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+let books = JSON.parse(localStorage.getItem("books")) || [];
+
+
+
+function showBooks(){
+
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("books").style.display="flex";
+
+document.getElementById("cart").style.display="none";
+
+document.getElementById("contact").style.display="none";
+
+
+displayBooks();
+
+
+}
+
+
+
+
+
+function displayBooks(){
+
+
+let list=document.getElementById("bookList");
+
+
+let html="";
+
+
+books.forEach((book,index)=>{
+
+
+html+=`
+
+<div class="card">
+
+<img src="${book.image}">
+
+<h3>${book.name}</h3>
+
+<p>Book No : ${index+1}</p>
+
+</div>
+
+`;
+
+});
+
+
+list.innerHTML=html;
+
+
+}
+
+
+
+
+function submitBook(){
+
+
+let op=document.getElementById("operation").value;
+
+let name=document.getElementById("bookName").value;
+
+let image=document.getElementById("bookImage").files[0];
+
+
+
+if(op=="add" || op=="concat"){
+
+
+if(name=="" || !image){
+
+alert("Enter book name and image");
+
+return;
+
+}
+
+
+
+let reader=new FileReader();
+
+
+reader.onload=function(){
+
+
+books.push({
+
+name:name,
+
+image:reader.result
+
+});
+
+
+save();
+
+displayBooks();
+
+
+};
+
+
+reader.readAsDataURL(image);
+
+
+
+}
+
+
+
+
+else if(op=="remove"){
+
+
+books=books.filter(book=>book.name!=name);
+
+save();
+
+displayBooks();
+
+
+}
+
+
+
+
+
+else if(op=="copy"){
+
+
+let book=books.find(b=>b.name==name);
+
+
+if(book){
+
+books.push(book);
+
+save();
+
+displayBooks();
+
+}
+
+
+}
+
+
+
+
+else if(op=="slice"){
+
+
+books=books.slice(0,3);
+
+save();
+
+displayBooks();
+
+
+}
+
+
+
+
+else if(op=="flat"){
+
+
+books=books.flat();
+
+save();
+
+displayBooks();
+
+
+}
+
+
+
+
+
+else if(op=="update"){
+
+
+let index=books.findIndex(b=>b.name==name);
+
+
+
+if(index!=-1 && image){
+
+
+let reader=new FileReader();
+
+
+reader.onload=function(){
+
+
+books[index].image=reader.result;
+
+save();
+
+displayBooks();
+
+
+};
+
+
+reader.readAsDataURL(image);
+
+
+}
+
+
+}
+
+
+}
+
+
+
+
+function save(){
+
+localStorage.setItem("books",JSON.stringify(books));
+
+}
+
+
+
+
+function home(){
+
+document.getElementById("home").style.display="flex";
+
+document.getElementById("books").style.display="none";
+
+document.getElementById("cart").style.display="none";
+
+document.getElementById("contact").style.display="none";
+
+
+}
+
+
+
+function cart(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("books").style.display="none";
+
+document.getElementById("cart").style.display="block";
+
+document.getElementById("contact").style.display="none";
+
+
+}
+
+
+
+function contact(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("books").style.display="none";
+
+document.getElementById("cart").style.display="none";
+
+document.getElementById("contact").style.display="block";
+
+
+}
+
+
+
+displayBooks();
+
+
+</script>
+
+
+</body>
+</html>

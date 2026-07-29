@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Result Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .heading {
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>School Result Analyzer</h2>
+
+    <div id="output"></div>
+</div>
+
+<script>
+
+const students = ["Rahul", "Priya", "Aman", "Rahul", "Neha"];
+const marks = [25, 35, 45, 60, 75];
+
+const output = document.getElementById("output");
+
+// indexOf()
+let firstRahul = students.indexOf("Rahul");
+
+// lastIndexOf()
+let lastRahul = students.lastIndexOf("Rahul");
+
+// includes()
+let nehaPresent = students.includes("Neha");
+
+// find()
+let firstPassingMarks = marks.find(mark => mark > 40);
+
+// findIndex()
+let firstPassingIndex = marks.findIndex(mark => mark > 40);
+
+// findLast()
+let lastAbove50 = marks.findLast(mark => mark > 50);
+
+// findLastIndex()
+let lastPassingIndex = marks.findLastIndex(mark => mark > 40);
+
+output.innerHTML = `
+<p class="heading">Students:</p>
+<p>${students.join(", ")}</p>
+
+<p class="heading">Marks:</p>
+<p>${marks.join(", ")}</p>
+
+<hr>
+
+<p><b>indexOf()</b><br>
+First Rahul is at index : ${firstRahul}</p>
+
+<p><b>lastIndexOf()</b><br>
+Last Rahul is at index : ${lastRahul}</p>
+
+<p><b>includes()</b><br>
+Is Neha enrolled? : ${nehaPresent}</p>
+
+<p><b>find()</b><br>
+First passing marks : ${firstPassingMarks}</p>
+
+<p><b>findIndex()</b><br>
+First passing student index : ${firstPassingIndex}</p>
+
+<p><b>findLast()</b><br>
+Last student scoring above 50 : ${lastAbove50}</p>
+
+<p><b>findLastIndex()</b><br>
+Last passing student index : ${lastPassingIndex}</p>
+`;
+
+</script>
+
+</body>
+</html>

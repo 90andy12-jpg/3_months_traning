@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// How to Declare Variables in JavaScript : There are 4 ways:
+
+// (a) Automatic Declaration
+// JavaScript automatically creates a variable if you don't declare it.
+// But this is not good practice.
+
+// x = 5;
+// y = 6;
+// z = x + y;
+// console.log(z);
+
+// 💡 Real-life analogy:
+// Writing notes without labeling them – later, you might forget what they mean.
+// That's why always declare properly.
+
+
+
+// (b) Using var (Old Way) (Global Scope and Mutable Value)
+
+// var x = 5;
+// var y = 6;
+// var z = x + y;
+// console.log(z); // 11
+
+// -> var was used in old JavaScript (before 2015).
+
+// -> It works but has some issues, so now we mostly use let and const.
+
+
+
+// (c) Using let (Modern Way) (Block Scope and Mutable Value)
+
+// let x = 5;
+// let y = 6;
+// let z = x + y;
+// console.log(z); // 11
+
+// -> Use let when the value can change later.
+
+// 💡 Example:
+
+// let age = 20;
+// age = 21; // now the value is updated
+// console.log(age); // 21
+
+
+
+// (d) Using const (Constant Value) (Block Scope and Immutable Value)
+
+// const pi = 3.14;
+
+// -> Use const when the value should not change.
+
+// const myName = "Manish";
+// myName = "Ravi"; // ❌ Error! (cannot change)
+// console.log(myName);
+
+// ✅ Rule:
+// Always use const first.
+// Use let only if the value needs to change.
+// Use var only for old JavaScript code.
+
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading market</title>
+
+<style>
+body{
+    text-align:center;
+    background:#2f2f2f;
+    color:white;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    margin:10px;
+}
+
+#output{
+    width:80%;
+    margin:auto;
+    text-align:left;
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:10px;
+    min-height:250px;
+}
+
+.summary{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+</head>
+<body>
+<h1>Trading Market</h1>
+<label>Rounds:</label>
+<input type="number" id="rounds" value="10" min="1">
+<button onclick="startTrading()">Start Trading</button>
+<div class="summary" id="summary"></div>
+<div id="output"></div>
+<script>
+let balance = 2000;
+let stock = 0;
+function startTrading(){
+    balance = 2000;
+    stock = 0;
+    let rounds = Number(document.getElementById("rounds").value);
+    let history = "";
+    for(let i=1; i<=rounds; i++){
+        let price = Math.floor(Math.random()*100)+1;
+        history += "<b>Round " + i + "</b> | Price : ₹" + price + "<br>";
+        if(price <= 30){
+            if(balance >= price){  
+                balance -= price;
+                stock++;
+                history += "BUY 1 Stock<br>";
+            }
+            else{
+                history += "Cannot Buy (Low Balance)<br>";
+            }
+        }
+        else if(price >= 70){
+            if(stock > 0){        
+                balance += price;
+                stock--;
+                history += "SELL 1 Stock<br>";
+            }
+            else{
+                history += "No Stock Available<br>";
+            }
+        }
+        else{
+            history += "HOLD Position<br>";
+        }
+        history += "Balance: ₹" + balance +
+                   " | Stock: " + stock + "<hr>";
+    }
+    document.getElementById("output").innerHTML = history;
+    let totalValue = balance + stock * 50;
+    document.getElementById("summary").innerHTML =
+        "Final Balance : ₹" + balance +
+        " | Holding : " + stock +
+        " Stock(s)" +
+        " | Portfolio Value : ₹" + totalValue;
+}
+</script>
+
+</body>
+</html>

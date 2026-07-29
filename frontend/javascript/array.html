@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>Array</h2>
+<p id="demo"></p>
+<script>
+        // 1. array_tostring()
+             // const students = ["aditya", "palak","anil","aman"]
+             // console.log (typeof students);
+             // let mylist= students.toString()
+            //  document.getElementById("demo").innerHTML=`students list : ${mylist}`;
+
+        // 2. array_at()
+            // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            // let fruit = fruits.at(-3);
+            // document.getElementById("demo").innerHTML = `The 3rd fruit in the basket is: ${fruit}`;
+
+        // 3. array_join()
+            //  const classs = ["aditya", "palak","anil","aman"];
+            //  let myList = classs.join('_');
+            //  document.getElementById("demo").innerHTML = myList;
+
+        //  4.  array length
+            //   const cars = ["RRR", "Alto", "BMW"];
+            //    document.getElementById("demo").innerHTML = `Total cars in parking:  ${ cars.length}`;
+
+        // 5. array pop()
+            // const x = ["aditya", "palak", "anil", "aman", "sahil", "rohan", "anjali"];
+            // x.pop();
+            // console.log(x);
+
+        // 6. array push()
+            // const a= ["aditya", "palak", "anil"];
+            // a.push("anjali");
+            // console.log(a); 
+
+        // 7. array shift()
+            // const y = ["aditya", "palak", "anil", "aman", "sahil"];
+            // y.shift();
+            // console.log(y);
+
+        // 8. array unshift()
+            // const p = ["aditya", "palak", "anil"];
+            // p.unshift("rahul");
+            // console.log(p);
+           
+        //  9. delete array ()
+            // const fruits = ["mango","orange","kiwi","apple","banana"];
+            // delete fruits[2];
+            // console.log(fruits);
+            // document.getElementById("demo").innerHTML = `total fruits : ${fruits}`;
+
+        // 10. array concat()
+            // const boy =["anil" ,"rohan" ,"rahul" ];
+            // const girl =["anjali", "simran", "palak"];
+            // const team1 =["sara", "mike", "jone"];
+            // const team = boy.concat(team1, girl);
+            // document.getElementById("demo").innerHTML = `total teams : ${ team }`;
+
+        // 11. array copywithin()
+            // const students = ["anil", "rohan", "rahul" ,"amit" ,"yash"];
+            // students.copyWithin(2,1);
+            // document.getElementById("demo").innerHTML = students;
+
+        // 12. array flat()
+            // const x =[[1,2,3], [4,5,6], [7,8,9]];
+            // console.log(x);
+            // const y = x.flat();
+            // console.log(y);
+            // document.getElementById("demo").innerHTML = y;
+
+        // 13.array flatmap()
+            // const nums = [1, 2, 3];
+            // const result = nums.flatMap(x => [x, x * 10]);
+            // document.getElementById("demo").innerHTML = result;
+
+        // 14. array splice()
+            // const fruits = ["Apple", "Banana", "Mango","Kiwi"];
+            // fruits.splice(1, 1, "Orange"); 
+            // document.getElementById("demo").innerHTML = `after adding: ${fruits}`;
+            // document.write(fruits)
+            // fruits.splice(1, 2);
+            // document.getElementById("demo").innerHTML += `<br>After Removing: ${fruits}`;
+
+        // 15. array tospliced()
+            // const x = ["Jan", "Feb", "Mar", "Apr"];
+            // const y = x.toSpliced(1, 2);
+            // document.getElementById("demo").innerHTML = "Original: " + x + "<br>New: " + y;
+        
+        // 16. array slice()
+            // const players = ["Rohit", "Virat", "Dhoni", "Sachin"];
+            // const top2 = players.slice(1,3);  document.getElementById("demo").innerHTML = "Top 2 Players: " + top2 + "<br>Original Team: " + players;
+
+        // 17. array numeric sort()
+            // const marks = [40,30,10,5,100,55,99,71,0]
+            // // Ascending
+            // marks.sort(function(a, b){return a - b});
+            // document.getElementById("demo").innerHTML = "Ascending: " + marks;
+
+            // // Descending
+            // marks.sort(function(a, b){return b - a});
+            // document.getElementById("demo").innerHTML += "<br>Descending: " + marks;
+
+        // 18. array find() method
+            //  const ages =[30,40,10,6,4,2,101]
+            //  let adult = ages.find( age => age > 100)
+            //  document.getElementById("demo").innerHTML= "adult age is found " + adult;
+
+        // 19. array findindex() method
+            // const ages =[30,40,10,6,4,2,101]
+            // let index = ages.findIndex( age => age > 50)
+            // document.getElementById("demo").innerHTML= "first adult age index is found " + index;
+
+        // 20. array findlastindex() method
+            //  const temp =[30,40,10,6,4,2,20]
+            //  let last = temp.findLastIndex( age => age > 35)
+            //  document.getElementById("demo").innerHTML= "temp is greater than 100 at the index : " + last;
+
+        //  21. array include() method
+            // const fruits = ["apple" , "papaya","grapes","kiwi","mango"];
+            // let result = fruits.includes("kiwi");
+            // document.getElementById("demo").innerHTML= "is kiwi include in this ? " + result;
+
+        //  22. array indexof() method
+            // const fruits = ["apple" , "papaya","grapes","kiwi","mango"];
+            // let index = fruits.indexOf("kiwi" ,2);
+            // document.getElementById("demo").innerHTML= "First 'kiwi' found at position: " + index;
+
+        //  23. array lastindexof
+            //  const fruits = ["apple" , "papaya","grapes","kiwi","mango"];
+            //  let position = fruits.lastIndexOf("kiwi" ,5);
+            //  document.getElementById("demo").innerHTML= "last 'kiwi' found at position: " + position;
+
+        //  24. array sort
+            //  const students =["palak","dristi","tanvi","himani","kritika","rajinder"]
+            //  students.sort()
+            //  document.getElementById("demo").innerHTML= "alphabetically sorted students: " + students;
+
+        //  25. array tosort
+            //    const months =["jan","feb","march","august","december","april"]
+            //   const sortedMonths = months.toSorted();
+            //   document.getElementById("demo").innerHTML= "Original: " + months + "<br>Sorted Copy: " + sortedMonths;
+
+        //  26. array reverse
+            //  const movies =["Avengers", "Batman", "Superman", "Spiderman"]
+            //  movies.reverse()
+            //  document.getElementById("demo").innerHTML= "movies in reverse order " + movies;
+
+        //  27. array toreverse
+            //  const months =["jan","feb","march","august","december","april"]
+            //  const reverseMonths = months.toReversed();
+            //  document.getElementById("demo").innerHTML= "Original: " + months + "<br> reverse: " + reverseMonths;
+
+        //  28. array random sort()
+            //  const questions = [1, 2, 3, 4, 5, 6];
+            //  questions.sort(() => 0.5 - Math.random());
+            //  document.getElementById("demo").innerHTML ="Shuffled Questions: " + questions
+
+        // 29. array Find Min & Max
+            // const numbers = [40, 100, 1, 5, 25, 10];
+            // const minVal = Math.min.apply(null, numbers);
+            // const maxVal = Math.max.apply(null, numbers);
+            // document.getElementById("demo").innerHTML =
+            // "Min: " + minVal + "<br>Max: " + maxVal;
+
+        // 30. array Sort Objects 
+            // const cars = [
+            // {type:"Volvo", year:2016},
+            // {type:"BMW", year:2010},
+            // {type:"Saab", year:2001}
+            //  ];
+            // // Sort by Year
+            // cars.sort((a, b) => a.year - b.year);
+            // document.getElementById("demo").innerHTML =
+            // "Cars Sorted by Year: " + cars.map(c => c.type + " " + c.year).join(", ");
+            // console.log(typeof(cars))
+
+        // 31. array foreach
+            // const students = ["Aman", "Riya", "Karan"];
+            // let msg = "";
+            // students.forEach(function(name, index) {
+            // msg += "Hello " + name + " (Roll No: " + (index+1) + ")<br>";
+            // }); 
+            // document.getElementById("demo").innerHTML = msg;
+
+        // 32.array map()
+            // const marks = [50, 60, 70];
+            // const bonusMarks = marks.map(m => m + 10);
+            // console.log(marks);
+            // document.getElementById("demo").innerHTML =
+            // "Original: " + marks + "<br>With Bonus: " + bonusMarks;
+
+        // 33. filter
+            // const marks = [45, 62, 80, 30, 95];
+            // const passed = marks.filter(m => m > 60);
+            // document.getElementById("demo").innerHTML = 
+            // "Students passed: " + passed;
+
+        // 34. reduce
+            // const prices = [100, 200, 50];
+            // let total = prices.reduce((sum, price) => sum + price, 0);
+            // document.getElementById("demo").innerHTML = "Total Bill: ₹" + total;
+
+        // 35. reduceright
+            // const words = ["World", "My", "Hello"];
+            // let sentence = words.reduceRight((a, b) => a + " " + b);
+            // document.getElementById("demo").innerHTML = sentence;
+
+        // 36. every
+            // const ages = [18, 18, 25, 30];
+            // let allAdults = ages.every(a => a >= 18);
+            // document.getElementById("demo").innerHTML = "All adults? " + allAdults;
+
+        // 37. some
+            // const ages = [19, 18, 22];
+            // let hasMinor = ages.some(a => a <= 18);
+            // document.getElementById("demo").innerHTML = "Any minor? " + hasMinor;
+
+        // 38. array
+            //  let words = ["palak", "kritika", "himani"];
+            //  let letters = words.map(word => Array.from(word));
+            //  let letters = [];
+            //  for(let i = 0; i < words.length; i++){
+            //  letters.push(Array.from(words[i]));
+            //  }
+            // //  let letters = [];
+            //   words.forEach(word => {
+            //   letters.push(Array.from(word));
+            //   });
+            //   console.log(letters);
+
+        // 39. spread
+            //  const arr1 = [1,2,3];
+            //  const arr2 = [4,5,6];
+            //  const merged = [...arr1, ...arr2];
+            //  console.log(arr1);   
+            //  console.log(arr2);      
+            //  document.getElementById("demo").innerHTML = merged;
+            //  console.log(merged);
+
+        // 40. rest
+            // const arr = [1,2,3,4,5];
+            // const [a, ...rest] = arr;
+            // document.getElementById("demo").innerHTML = 
+            // "First: " + a + "<br>Rest: " + rest;
+  </script>
+</body>
+</html>

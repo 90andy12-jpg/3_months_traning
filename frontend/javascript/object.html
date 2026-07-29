@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+//         JavaScript Objects
+// 👉 An object is like a box where you can store related information (properties) and actions (methods).
+        const car = {
+            name: "Toyota",
+            color: "white",
+            year: 2020,
+            start: function() {console.log("Car started");},
+            drive: function() {console.log("Car is driving");}
+        };
+
+        console.log(car.name); // Output: Toyota
+        car.start(); // Output: Car started
+        car.drive(); // Output: Car is driving
+        car["drive"](); // Output: Car is driving
+        console.log(car["color"]); // Output: white
+
+
+    // object literal (easiest and most common way to create an object)
+        const person ={ firstname: "John", lastname: "Doe", age: 30, };
+       
+        // Empty Object + Adding Properties Later
+        const person1 = {};
+        person1.firstname = "John";
+        person1.lastname = "Doe";
+
+        // Accessing Object Properties
+        person.firstname; // Output: John
+        person["lastname"]; // Output: Doe
+
+        // object methods
+
+        //   A method is just a function stored inside an object.
+
+      const person2 = {
+       firstName: "John",
+       lastName: "Doe",
+       fullName: function() {
+       return this.firstName + " " + this.lastName;
+       }
+    };
+    // Constructor Functions (for many objects)
+
+// If you want to create many similar objects, use a constructor.
+
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const father = new Person("John", "Doe", 50, "blue");
+const mother = new Person("Sally", "Rally", 48, "green");
+console.log(father.firstName,father.age); // John
+console.log(mother.age); // 48
+console.log(mother.firstName); // Sally
+console.log(mother.lastName); // Rally
+console.log(mother.eyeColor); // green
+console.log(father.age); // 50
+
+
+        </script>
+</body>
+</html>

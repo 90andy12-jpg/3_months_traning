@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="bookForm" style="display:block; border:1px solid #000; padding:20px; width:300px; margin:20px auto; background:#f5f5f5;">
+    <h3>Book Operation</h3>
+
+    <label>Book Name:</label><br>
+<input type="text" id="bookName"><br><br>
+
+<label>Book Image:</label><br>
+<input type="file" id="bookImage" accept="image/*"><br><br>
+
+<label>Select Operation:</label><br>
+<select id="operation">
+    <option value="add">Add</option>
+    <option value="remove">Remove</option>
+    <option value="copy">Copy</option>
+    <option value="slice">Slice</option>
+    <option value="concat">New Arrival</option>
+    <option value="flat">Flat Category</option>
+    <option value="update">Update</option>
+</select>
+
+    <br><br>
+
+    <button onclick="submitBook()">Submit</button>
+    <button onclick="closeForm()">Close</button>
+    
+
+</div>
+</body>
+</html>
