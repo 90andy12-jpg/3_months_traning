@@ -1,0 +1,2 @@
+Hello, this message is written using Node.js!
+This is another message.

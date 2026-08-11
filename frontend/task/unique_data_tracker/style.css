@@ -1,0 +1,369 @@
+
+* {
+    box-sizing: border-box;
+
+}
+
+
+body {
+    margin: 0;
+
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background-image: url(./images/tracker.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+/* ================= MAIN LAYOUT ================= */
+
+.main-container {
+
+    display: flex;
+
+    gap: 20px;
+
+    width: 1200px;
+
+    max-width: 95%;
+
+    margin: auto;
+
+    align-items: flex-start;
+}
+
+
+/* ================= HISTORY ================= */
+
+.history-box {
+
+    width: 300px;
+
+    background: rgb(164, 243, 168);
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px #dff6e8;
+
+    position: sticky;
+
+    top: 20px;
+
+    max-height: 650px;
+
+    overflow-y: auto;
+}
+
+
+.history-box h2 {
+
+    margin-top: 0;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 10px;
+}
+
+
+.history-item {
+
+    background: #f7f7f7;
+
+    border: 1px solid #ddd;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border-radius: 6px;
+
+    position: relative;
+}
+
+
+.history-item p {
+
+    margin: 4px 0;
+
+    font-size: 14px;
+}
+
+
+.history-delete {
+
+    position: absolute;
+
+    top: 7px;
+
+    right: 7px;
+
+    border: none;
+
+    background: red;
+
+    color: white;
+
+    border-radius: 4px;
+
+    padding: 4px 7px;
+
+    cursor: pointer;
+}
+
+
+.history-delete:hover {
+
+    background: darkred;
+}
+
+
+.empty-history {
+
+    text-align: center;
+
+    color: #888;
+}
+
+
+.clear-history {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    background: #333;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+
+    flex: 1;
+
+    background: rgb(187, 236, 200);
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px #ccc;
+}
+
+
+h1 {
+
+    text-align: center;
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-box {
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+label {
+
+    font-weight: bold;
+}
+
+
+input {
+
+    padding: 12px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    width: 100%;
+}
+
+
+input:focus {
+
+    outline: none;
+
+    border-color: #333;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+
+button {
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+button:hover {
+
+    opacity: 0.8;
+}
+
+
+.add-btn {
+
+    background: green;
+}
+
+
+.update-btn {
+
+    background: orange;
+}
+
+
+.search-btn {
+
+    background: blue;
+}
+
+
+.remove-btn {
+
+    background: red;
+}
+
+
+.reset-btn {
+
+    background: #555;
+}
+
+
+/* ================= MESSAGE ================= */
+
+#message {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    background: #eee;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+
+/* ================= USER ================= */
+
+.container h2 {
+
+    margin-top: 30px;
+}
+
+
+.user-card {
+
+    border: 1px solid #ddd;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 7px;
+
+    background: #fafafa;
+}
+
+
+.user-card h3 {
+
+    margin-top: 0;
+
+    color: #333;
+}
+
+
+.user-card p {
+
+    margin: 7px 0;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+    .main-container {
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .history-box {
+
+        width: 100%;
+
+        position: static;
+
+        max-height: none;
+    }
+
+
+    .container {
+
+        width: 100%;
+    }
+
+}

@@ -11,23 +11,27 @@
     <p id="demo"></p>
 
     <script>
-        let promise = new Promise(function(resolve, reject) {
-            let x = 0; 
+        function showPromiseResult() {
+            let promise = new Promise(function(resolve, reject) {
+                let x = 0;
 
-            if (x === 0) {
-                resolve("Promise Fulfilled");
-            } else {
-                reject("Promise Rejected");
-            }
-        });
-        console.log(promise);
-        promise
-            .then(function(value) {
-                document.getElementById("demo").innerHTML = value;
-            })
-            .catch(function(error) {
-                document.getElementById("demo").innerHTML = error;
+                if (x === 0) {
+                    resolve("Promise Fulfilled");
+                } else {
+                    reject("Promise Rejected");
+                }
             });
+
+            promise
+                .then(function(value) {
+                    document.getElementById("demo").innerHTML = value;
+                })
+                .catch(function(error) {
+                    document.getElementById("demo").innerHTML = error;
+                });
+        }
+
+        window.addEventListener("load", showPromiseResult);
     </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "3_months_traning",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u00003\u0000_\u0000m\u0000o\u0000n\u0000t\u0000h\u0000s\u0000_\u0000t\u0000r\u0000a\u0000n\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000#\u0000 \u00003\u0000_\u0000m\u0000o\u0000n\u0000t\u0000h\u0000s\u0000_\u0000t\u0000r\u0000a\u0000n\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/90andy12-jpg/3_months_traning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/90andy12-jpg/3_months_traning/issues"
+  },
+  "homepage": "https://github.com/90andy12-jpg/3_months_traning#readme"
+}
