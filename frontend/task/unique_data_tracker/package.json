@@ -1,0 +1,22 @@
+
+{
+    "name": "unique_data_tracker",
+    "version": "1.0.0",
+    "description": "Unique Data Tracker using JavaScript import and export",
+    "main": "script.js",
+    "type": "module",
+    "scripts": {
+        "start": "node script.js"
+    },
+    "keywords": [
+        "javascript",
+        "import",
+        "export",
+        "set",
+        "map"
+    ],
+    "author": "",
+    "license": "ISC"
+}
+
+

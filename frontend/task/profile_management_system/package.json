@@ -1,0 +1,13 @@
+{
+  "name": "profile_management_system",
+  "version": "1.0.0",
+  "description": "User Profile Management System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Profile Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>User Profile Management</h1>
+
+        <!-- =================================
+             GET USER PROFILE
+        ================================== -->
+
+        <div class="card">
+
+            <h2>View User Profile</h2>
+
+            <button id="viewBtn">
+                View Profile
+            </button>
+
+            <div id="profile"></div>
+
+        </div>
+
+
+        <!-- =================================
+             POST CREATE USER
+        ================================== -->
+
+        <div class="card">
+
+            <h2>Create New Profile</h2>
+
+            <form id="userForm">
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter name"
+                    required
+                >
+
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Enter age"
+                    required
+                >
+
+
+                <label>Role</label>
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Enter role"
+                    required
+                >
+
+
+                <button type="submit">
+                    Create Profile
+                </button>
+
+            </form>
+
+
+            <!-- Success/Error Message -->
+
+            <div id="message"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

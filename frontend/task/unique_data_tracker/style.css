@@ -1,19 +1,21 @@
 
 * {
     box-sizing: border-box;
-
 }
 
 
 body {
+
     margin: 0;
 
     padding: 30px;
 
     font-family: Arial, sans-serif;
 
-    background-image: url(./images/tracker.jpg);
+    background-image: url("./images/tracker.jpg");
+
     background-size: cover;
+
     background-position: center;
 
 }
@@ -34,6 +36,7 @@ body {
     margin: auto;
 
     align-items: flex-start;
+
 }
 
 
@@ -58,6 +61,7 @@ body {
     max-height: 650px;
 
     overflow-y: auto;
+
 }
 
 
@@ -70,6 +74,7 @@ body {
     border-bottom: 1px solid #ddd;
 
     padding-bottom: 10px;
+
 }
 
 
@@ -86,6 +91,7 @@ body {
     border-radius: 6px;
 
     position: relative;
+
 }
 
 
@@ -94,6 +100,7 @@ body {
     margin: 4px 0;
 
     font-size: 14px;
+
 }
 
 
@@ -116,12 +123,14 @@ body {
     padding: 4px 7px;
 
     cursor: pointer;
+
 }
 
 
 .history-delete:hover {
 
     background: darkred;
+
 }
 
 
@@ -130,6 +139,7 @@ body {
     text-align: center;
 
     color: #888;
+
 }
 
 
@@ -150,6 +160,7 @@ body {
     cursor: pointer;
 
     margin-top: 10px;
+
 }
 
 
@@ -166,6 +177,7 @@ body {
     border-radius: 10px;
 
     box-shadow: 0 0 10px #ccc;
+
 }
 
 
@@ -176,6 +188,7 @@ h1 {
     margin-top: 0;
 
     margin-bottom: 30px;
+
 }
 
 
@@ -190,12 +203,14 @@ h1 {
     gap: 15px;
 
     align-items: center;
+
 }
 
 
 label {
 
     font-weight: bold;
+
 }
 
 
@@ -210,6 +225,7 @@ input {
     font-size: 16px;
 
     width: 100%;
+
 }
 
 
@@ -218,6 +234,7 @@ input:focus {
     outline: none;
 
     border-color: #333;
+
 }
 
 
@@ -232,6 +249,7 @@ input:focus {
     flex-wrap: wrap;
 
     margin-top: 25px;
+
 }
 
 
@@ -248,42 +266,49 @@ button {
     cursor: pointer;
 
     font-size: 15px;
+
 }
 
 
 button:hover {
 
     opacity: 0.8;
+
 }
 
 
 .add-btn {
 
     background: green;
+
 }
 
 
 .update-btn {
 
     background: orange;
+
 }
 
 
 .search-btn {
 
     background: blue;
+
 }
 
 
 .remove-btn {
 
     background: red;
+
 }
 
 
 .reset-btn {
 
     background: #555;
+
 }
 
 
@@ -300,6 +325,7 @@ button:hover {
     border-radius: 5px;
 
     font-weight: bold;
+
 }
 
 
@@ -308,6 +334,7 @@ button:hover {
 .container h2 {
 
     margin-top: 30px;
+
 }
 
 
@@ -322,6 +349,7 @@ button:hover {
     border-radius: 7px;
 
     background: #fafafa;
+
 }
 
 
@@ -330,12 +358,14 @@ button:hover {
     margin-top: 0;
 
     color: #333;
+
 }
 
 
 .user-card p {
 
     margin: 7px 0;
+
 }
 
 
@@ -348,6 +378,7 @@ button:hover {
         flex-direction: column;
 
         width: 100%;
+
     }
 
 
@@ -358,12 +389,16 @@ button:hover {
         position: static;
 
         max-height: none;
+
     }
 
 
     .container {
 
         width: 100%;
+
     }
 
 }
+
+

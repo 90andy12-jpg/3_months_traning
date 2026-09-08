@@ -1,30 +1,20 @@
 
 // =====================================================
-// SET
-// Unique emails store karega
+// IMPORT
 // =====================================================
 
-const users = new Set();
-
-
-// =====================================================
-// MAP
-// User ka complete data store karega
-// =====================================================
-
-const userData = new Map();
+import {
+    users,
+    userData,
+    historyData,
+    addHistoryData,
+    removeHistoryData,
+    clearHistoryData
+} from "./data.js";
 
 
 // =====================================================
-// HISTORY
-// =====================================================
-
-let historyData = [];
-
-
-// =====================================================
-// GENERATOR
-// U001, U002, U003...
+// ID GENERATOR
 // =====================================================
 
 function* idGenerator() {
@@ -36,8 +26,11 @@ function* idGenerator() {
         yield "U" + String(count).padStart(3, "0");
 
         count++;
+
     }
+
 }
+
 
 let generator = idGenerator();
 
@@ -61,6 +54,8 @@ function addUser() {
         document.getElementById("courses").value.trim();
 
 
+    // Validation
+
     if (name === "" || email === "") {
 
         alert("Please enter Name and Email!");
@@ -70,6 +65,8 @@ function addUser() {
         return;
     }
 
+
+    // Duplicate email check
 
     if (users.has(email)) {
 
@@ -136,6 +133,7 @@ function addUser() {
     clearInputs();
 
     displayUsers();
+
 }
 
 
@@ -190,6 +188,7 @@ function updateUserData() {
     if (score !== "") {
 
         user.score = score;
+
     }
 
 
@@ -198,6 +197,7 @@ function updateUserData() {
     if (courses !== "") {
 
         user.courses = courses;
+
     }
 
 
@@ -228,6 +228,7 @@ function updateUserData() {
     clearInputs();
 
     displayUsers();
+
 }
 
 
@@ -317,6 +318,7 @@ function searchUser() {
         "USER SEARCHED",
         user.name + " (" + user.id + ")"
     );
+
 }
 
 
@@ -359,9 +361,13 @@ function removeUser() {
 
 
     const confirmDelete = confirm(
+
         "Are you sure you want to remove this user?\n\n" +
+
         "Name: " + user.name +
+
         "\nID: " + user.id
+
     );
 
 
@@ -384,9 +390,13 @@ function removeUser() {
 
 
     alert(
+
         "User Removed Successfully!\n\n" +
+
         "Name: " + user.name +
+
         "\nID: " + user.id
+
     );
 
 
@@ -402,6 +412,7 @@ function removeUser() {
     clearInputs();
 
     displayUsers();
+
 }
 
 
@@ -427,7 +438,7 @@ function displayUsers() {
     }
 
 
-    userData.forEach(function(user) {
+    userData.forEach(function (user) {
 
         output.innerHTML += `
 
@@ -456,6 +467,7 @@ function displayUsers() {
         `;
 
     });
+
 }
 
 
@@ -478,9 +490,10 @@ function addHistory(action, details) {
     };
 
 
-    historyData.unshift(historyObject);
+    addHistoryData(historyObject);
 
     displayHistory();
+
 }
 
 
@@ -511,7 +524,7 @@ function displayHistory() {
     }
 
 
-    historyData.forEach(function(item) {
+    historyData.forEach(function (item) {
 
         history.innerHTML += `
 
@@ -520,16 +533,21 @@ function displayHistory() {
                 <button
                     class="history-delete"
                     onclick="deleteHistory(${item.id})">
+
                     X
+
                 </button>
+
 
                 <p>
                     <b>${item.action}</b>
                 </p>
 
+
                 <p>
                     ${item.details}
                 </p>
+
 
                 <p>
                     <small>${item.time}</small>
@@ -540,6 +558,7 @@ function displayHistory() {
         `;
 
     });
+
 }
 
 
@@ -562,17 +581,14 @@ function deleteHistory(id) {
     }
 
 
-    historyData =
-        historyData.filter(function(item) {
-
-            return item.id !== id;
-
-        });
+    removeHistoryData(id);
 
 
     alert("History item deleted successfully!");
 
+
     displayHistory();
+
 }
 
 
@@ -603,14 +619,17 @@ function clearHistory() {
     }
 
 
-    historyData = [];
+    clearHistoryData();
 
 
     alert("All history cleared successfully!");
 
+
     showMessage("History cleared!");
 
+
     displayHistory();
+
 }
 
 
@@ -621,8 +640,11 @@ function clearHistory() {
 function resetSystem() {
 
     const confirmReset = confirm(
+
         "Are you sure you want to reset the complete system?\n\n" +
+
         "All users and data will be removed."
+
     );
 
 
@@ -650,8 +672,11 @@ function resetSystem() {
 
 
     addHistory(
+
         "SYSTEM RESET",
+
         "All users and data were cleared"
+
     );
 
 
@@ -668,6 +693,7 @@ function resetSystem() {
     clearInputs();
 
     displayUsers();
+
 }
 
 
@@ -684,6 +710,7 @@ function clearInputs() {
     document.getElementById("score").value = "";
 
     document.getElementById("courses").value = "";
+
 }
 
 
@@ -695,7 +722,27 @@ function showMessage(message) {
 
     document.getElementById("message").innerText =
         message;
+
 }
+
+
+// =====================================================
+// MAKE FUNCTIONS AVAILABLE TO HTML
+// =====================================================
+
+window.addUser = addUser;
+
+window.updateUserData = updateUserData;
+
+window.searchUser = searchUser;
+
+window.removeUser = removeUser;
+
+window.resetSystem = resetSystem;
+
+window.clearHistory = clearHistory;
+
+window.deleteHistory = deleteHistory;
 
 
 // =====================================================

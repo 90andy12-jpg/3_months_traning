@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f2f4f7;
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+}
+
+
+.container {
+
+    width: 800px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    color: #222;
+
+}
+
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.card h2 {
+
+    margin-bottom: 20px;
+
+    color: #333;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-top: 12px;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+
+}
+
+
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+}
+
+
+button {
+
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+.profile-box {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #f5f7ff;
+
+    border-radius: 8px;
+
+}
+
+
+.profile-box p {
+
+    margin: 8px 0;
+
+}
+
+
+#message {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    display: none;
+
+}

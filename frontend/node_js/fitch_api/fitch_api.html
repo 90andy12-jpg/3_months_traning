@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>🌐 Fetch API Example (Real API Data) Using .then()</h2>
+  <button onclick="getUserData()">Fetch User</button>
+  <div id="userData">Click the button to see user data...</div>
+    <script>
+        function getUserData() {
+      const userDiv = document.getElementById("userData");
+      userDiv.innerHTML = "⏳ please wait for user data...";
+
+      // Step 1: Fetch data from API
+      fetch("https://jsonplaceholder.typicode.com/users/1")
+        // Step 2: Convert response to JSON
+        .then(response => response.json())
+        // Step 3: Display the data
+        .then(user => {
+          userDiv.innerHTML = `
+            <h3>👤 Name: ${user.name}</h3>
+            <p>📧 Email: ${user.email}</p>
+            <p>🏙️ City: ${user.address.city}</p>
+            <p>🏙️ Location: ${user.address.geo.lat}</p>
+          `;
+        })
+        // Step 4: Handle errors
+        .catch(error => {
+          userDiv.innerHTML = "Error fetching user data: " + error;
+        });
+    }
+    </script>
+</body>
+</html>
